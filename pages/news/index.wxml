@@ -1,0 +1,30 @@
+<view class="news-container">
+  <view 
+    class="news-item" 
+    wx:for="{{newsList}}" 
+    wx:key="id"
+    bindtap="onNewsClick"
+    data-id="{{item.id}}"
+  >
+    <view class="news-image">
+      <image 
+        src="{{item.image}}"
+        mode="aspectFit"
+        class="news-img"
+      />
+    </view>
+    <view class="news-content">
+      <view class="news-title">{{item.title}}</view>
+      <view class="news-info">
+        <view class="news-date">
+          <t-icon name="time" size="28rpx" />
+          <text>{{item.date}}</text>
+        </view>
+        <view class="news-views">
+          <t-icon name="browse" size="28rpx" />
+          <text>{{item.views}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

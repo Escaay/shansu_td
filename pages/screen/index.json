@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "山苏全景",
+  "usingComponents": {
+    "pano": "plugin://wxPano/pano",
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}

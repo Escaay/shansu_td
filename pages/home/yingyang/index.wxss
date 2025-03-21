@@ -1,0 +1,107 @@
+.nutrition-container {
+  padding: 32rpx;
+  padding-bottom: 100rpx;
+  background: #f7f8fa;
+  min-height: 100vh;
+}
+
+/* 保持原有表格样式 */
+.table-container {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  margin-bottom: 48rpx;
+}
+
+.table {
+  width: 100%;
+  border: 1rpx solid #eee;
+  border-right: 0;
+  border-bottom: 0;
+  font-size: 24rpx;
+  overflow: hidden;
+  border-radius: 12rpx;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+}
+
+.th,
+.td {
+  padding: 24rpx 16rpx;
+  border-right: 1rpx solid #eee;
+  flex: 1;
+  text-align: center;
+  word-break: break-all;
+}
+
+.header {
+  background: #f5f7fa;
+  font-weight: 600;
+}
+
+.th {
+  color: #1a1a1a;
+  font-size: 26rpx;
+}
+
+.td {
+  color: #666;
+}
+
+/* 新增亮点样式 */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+  padding: 8rpx;
+}
+
+.highlight-item {
+  background: #ffffff;
+  padding: 32rpx 24rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.highlight-item:active {
+  transform: scale(0.98);
+}
+
+.highlight-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16rpx;
+  display: flex;
+  align-items: center;
+}
+
+.highlight-title::before {
+  content: '';
+  display: inline-block;
+  width: 8rpx;
+  height: 32rpx;
+  background: #4caf50; /* 可以根据主题色调整 */
+  border-radius: 4rpx;
+  margin-right: 16rpx;
+}
+
+.highlight-desc {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 添加响应式布局 */
+@media screen and (max-width: 375px) {
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+}

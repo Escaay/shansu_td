@@ -1,0 +1,62 @@
+<pano panolist="{{panolist}}" entryid="{{entrypanoid}}" entryname="{{entrypanoname}}" width="320" height="240" key="{{key}}" autoinit="{{false}}" bindtap="closeMenu">
+  <cover-view class="loading-container" wx:if="{{isLoading}}">
+    <cover-view class="loading-content">
+      <cover-view class="loading-spinner"></cover-view>
+      <cover-view class="loading-text">全景加载中...</cover-view>
+    </cover-view>
+  </cover-view>
+  
+  <cover-view class="menu-container {{isMenuOpen ? 'menu-open' : ''}}" catchtap="preventBubble">
+    <cover-view class="menu-icon {{isMenuOpen ? 'rotate' : ''}}" bindtap="toggleMenu">
+      <cover-image src="/public/menu.png" class="icon-image"></cover-image>
+    </cover-view>
+    
+    <cover-view class="menu-items {{isMenuOpen ? 'show' : ''}}">
+      <cover-view class="menu-item" bindtap="covertap">切换场景</cover-view>
+      <cover-view class="menu-item" bindtap="getPanoInfo">场景介绍</cover-view>
+    </cover-view>
+  </cover-view>
+  
+  <!-- 新增返回按钮 -->
+  <cover-view class="back-button" bindtap="goBack">
+    <cover-image src="/public/back.png" class="icon-image"></cover-image>
+  </cover-view>
+  
+  <!-- 场景选择模态框 -->
+  <cover-view class="scene-modal {{showSceneModal ? 'show' : ''}}" bindtap="closeSceneModal">
+    <cover-view class="scene-content" catchtap="preventBubble">
+      <cover-view class="modal-header">
+        <cover-view class="scene-title">
+          选择场景
+          <cover-view class="scene-subtitle">（上滑查看全部）</cover-view>
+        </cover-view>
+        <cover-view class="close-btn" bindtap="closeSceneModal">×</cover-view>
+      </cover-view>
+      <cover-view class="scene-list">
+        <cover-view 
+          class="scene-item" 
+          wx:for="{{sceneList}}" 
+          wx:key="name"
+          data-scene="{{item}}"
+          bindtap="{{index !== 1 ? 'selectScene' : ''}}"
+        >
+          <cover-image class="scene-image" src="{{item.image}}"></cover-image>
+          <cover-view class="scene-name">{{item.title}}</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+
+  <!-- 场景介绍模态框 -->
+  <cover-view class="scene-info-modal {{showInfoModal ? 'show' : ''}}" bindtap="closeInfoModal">
+    <cover-view class="scene-info-content" catchtap="preventBubble">
+      <cover-view class="modal-header">
+        <cover-view class="scene-title">{{currentScene.title}}</cover-view>
+        <cover-view class="close-btn" bindtap="closeInfoModal">×</cover-view>
+      </cover-view>
+      <cover-view class="scene-description">
+        {{currentScene.description}}
+      </cover-view>
+    </cover-view>
+  </cover-view>
+</pano> 

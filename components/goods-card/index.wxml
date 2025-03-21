@@ -1,0 +1,76 @@
+<view
+  id="{{independentID}}"
+  class="goods-card"
+  data-goods="{{ goods }}"
+>
+	<view class="goods-card__main">
+		<view class="goods-card__thumb" bind:tap="clickThumbHandle">
+			<t-image
+			  wx:if="{{ !!goods.thumb }}"
+			  t-class="goods-card__img"
+			  src="{{ goods.thumb }}"
+			  mode="aspectFill"
+			  lazy-load
+			/>
+		</view>
+		<view class="goods-card__body">
+			<view class="goods-card__upper">
+				<view wx:if="{{ goods.title }}" class="goods-card__title">
+					{{ goods.title }}
+				</view>
+
+			</view>
+			<view class="goods-card__down">
+
+				<view class="book-btn" bind:tap="handleBooking">
+					<text>预约参观</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 名片弹窗 -->
+<t-popup visible="{{showCardModal}}" bind:visible-change="onVisibleChange" placement="center">
+  <view class="contact-popup">
+    <t-icon 
+      name="close" 
+      size="48rpx" 
+      color="#999" 
+      bind:tap="closeModal"
+      class="close-icon"
+      catch:tap="closeModal"
+    />
+    <view class="contact-list">
+      <view 
+        wx:for="{{cardInfo}}" 
+        wx:key="index" 
+        class="contact-item"
+        bindtap="selectContact"
+        data-index="{{index}}"
+      >
+        <view class="contact-main">
+          <image class="contact-avatar large" src="{{item.avatar || '/images/default-avatar.png'}}" mode="aspectFill"/>
+          <view class="contact-info">
+            <view class="contact-name">{{item.name}}</view>
+            <view class="contact-title">{{item.title}}</view>
+            <view class="contact-phone">电话：{{item.phone}}</view>
+            <view class="contact-wechat text-ellipsis">微信：{{item.wechat}}</view>
+          </view>
+        </view>
+        <view class="contact-actions-bottom">
+          <t-button bindtap="copyWechat" data-wechat="{{item.wechat}}" size="small" theme="primary" block>添加微信</t-button>
+        </view>
+      </view>
+    </view>
+  </view>
+</t-popup>
+
+<wxs module="utils">
+module.exports = {
+  formatPrice: function (price) {
+    return (price / 100).toFixed(2)
+  }
+}
+</wxs>
+

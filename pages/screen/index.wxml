@@ -1,0 +1,51 @@
+<view class="screen-container">
+  <view class="location-list">
+    <view class="location-item" wx:for="{{locationList}}" wx:key="id" data-id="{{item.id}}" bindtap="onLocationTap">
+      <image class="location-image" src="{{item.image}}" mode="aspectFill"/>
+      <view class="location-info">
+        <view class="location-title">{{item.title}}</view>
+        <view class="location-desc">{{item.description}}</view>
+        <button class="book-btn" catchtap="handleBooking">预约参观</button>
+        <button class="view-btn">查看全景</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<t-popup visible="{{showCardModal}}" bind:visible-change="onVisibleChange" placement="center">
+  <view class="contact-popup">
+    <t-icon 
+      name="close" 
+      size="48rpx" 
+      color="#999" 
+      class="close-icon"
+      catch:tap="closeModal"
+    />
+    <view class="contact-list">
+      <view 
+        wx:for="{{cardInfo}}" 
+        wx:key="index" 
+        class="contact-item"
+      >
+        <view class="contact-main">
+          <image class="contact-avatar large" src="{{item.avatar || '/images/default-avatar.png'}}" mode="aspectFill"/>
+          <view class="contact-info">
+            <view class="contact-name">{{item.name}}</view>
+            <view class="contact-title">{{item.title}}</view>
+            <view class="contact-phone">电话：{{item.phone}}</view>
+            <view class="contact-wechat text-ellipsis">微信：{{item.wechat}}</view>
+          </view>
+        </view>
+        <view class="contact-actions-bottom">
+          <t-button 
+            catch:tap="copyWechat" 
+            data-wechat="{{item.wechat}}" 
+            size="medium" 
+            theme="primary" 
+            block
+          >添加微信</t-button>
+        </view>
+      </view>
+    </view>
+  </view>
+</t-popup>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "山苏资讯",
+  "usingComponents": {
+    "t-image": "/components/webp-image/index",
+    "t-icon": "tdesign-miniprogram/icon/icon"
+  }
+}

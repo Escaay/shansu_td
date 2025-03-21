@@ -1,0 +1,25 @@
+<wxs module="utils">
+	var REGEXP = getRegExp('^\d+(\.\d+)?$');
+	function addUnit(value) {
+	if (value == null) {
+	return '';
+	}
+	return REGEXP.test('' + value) ? value + 'rpx' : value;
+	}
+	module.exports = {
+	addUnit: addUnit
+	};
+</wxs>
+<view class="price {{wr-class}}">
+	<view class="symbol symbol-class {{symbol-class}}">¥</view>
+	<view class="pprice">
+		{{price/100}}.00
+		<text class="currency" wx:if="{{currency}}">/{{currency}}</text>
+	</view>
+	<block wx:if="{{originPrice && type === 'delthrough'}}">
+		<view class="pprice origin-price">
+			{{originPrice/100}}.00<text class="currency" wx:if="{{currency}}">/{{currency}}</text>
+		</view>
+	</block>
+</view>
+

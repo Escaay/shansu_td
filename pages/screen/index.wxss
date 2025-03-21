@@ -1,0 +1,231 @@
+.screen-container {
+  width: 100%;
+  height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 96rpx);
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-cover {
+  width: 45%; /* 改为百分比宽度 */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.location-list {
+  padding: 24rpx;
+  background: #f5f5f5;
+  width: 90%; /* 添加宽度限制 */
+  margin: 0 auto; /* 居中显示 */
+  padding-bottom: calc(env(safe-area-inset-bottom) + 96rpx);
+}
+
+.location-item {
+  background: #fff;
+  border-radius: 16rpx; /* 增加圆角 */
+  margin-bottom: 32rpx; /* 增加卡片间距 */
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  padding: 50rpx; /* 添加内边距 */
+}
+
+.location-image {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+  border-radius: 12rpx; /* 图片添加圆角 */
+}
+
+.location-info {
+  padding: 24rpx 0;
+  margin-bottom: 10rpx; /* 减小底部间距 */
+}
+
+.location-title {
+  font-size: 36rpx; /* 增大标题文字 */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.location-desc {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.view-btn {
+  background: #ff4d4f;
+  color: white;
+  font-size: 26rpx;
+  padding: 4rpx 32rpx;
+  border-radius: 40rpx;
+  width: auto;
+  font-weight: bold;
+  border: none;
+  margin: 0;
+  margin-right: 24rpx;
+  box-shadow: 0 4rpx 8rpx rgba(255, 77, 79, 0.2);
+  display: inline-block;
+  margin-top: 24rpx;
+  float: right;
+}
+
+.view-btn::after {
+  border: none;
+}
+
+.view-btn:active {
+  opacity: 0.8;
+}
+
+/* 修改了解详情按钮样式，与查看全景按钮保持一致 */
+.book-btn {
+  background: #8da76e;
+  color: white;
+  font-size: 26rpx;
+  padding: 4rpx 32rpx;
+  border-radius: 40rpx;
+  width: auto;
+  font-weight: bold;
+  border: none;
+  margin: 0;
+  margin-left: 24rpx; /* 左边距 */
+  margin-top: 24rpx;
+  box-shadow: 0 4rpx 8rpx rgba(255, 77, 79, 0.2);
+  display: inline-block;
+  float: left; /* 左浮动 */
+}
+
+/* 添加这个来移除默认边框 */
+.book-btn::after {
+  border: none;
+}
+
+.book-btn:active {
+  opacity: 0.8;
+}
+
+/* 名片弹窗样式 */
+.contact-popup {
+  position: relative;
+  background: white;
+  padding: 32rpx;
+  border-radius: 16rpx;
+  width: 600rpx; /* 设置固定宽度 */
+  max-height: 80vh;
+  display: flex;
+  padding-top: 80rpx;
+  flex-direction: column;
+}
+
+.contact-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(80vh - 120rpx);
+  padding-right: 8rpx;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  padding: 24rpx;
+  border-radius: 8rpx;
+  margin-bottom: 16rpx;
+  border: 2rpx solid #eee;
+}
+
+.contact-main {
+  display: flex;
+  width: 100%;
+  margin-bottom: 16rpx;
+}
+
+.contact-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 24rpx;
+  margin-right: 24rpx;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 0; /* 防止文本溢出 */
+}
+
+.contact-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.contact-title {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.contact-phone,
+.contact-wechat {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-actions-bottom {
+  width: 100%;
+  padding: 6rpx 0; /* 增加一些内边距 */
+  margin-left: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-actions-bottom .t-button {
+  width: 320rpx !important; /* 增加按钮宽度 */
+  min-width: unset !important;
+  height: 72rpx !important; /* 可选：增加按钮高度 */
+  line-height: 72rpx !important; /* 可选：调整文字垂直居中 */
+}
+
+.close-icon {
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+  padding: 12rpx;
+  margin: -12rpx;
+  cursor: pointer;
+  z-index: 1;
+}

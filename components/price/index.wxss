@@ -1,0 +1,89 @@
+:host {
+  display: inline-block;
+  display: inline-block;
+  font-weight: inherit;
+}
+.inline {
+  display: inline;
+  white-space: nowrap;
+}
+.price {
+  display: flex;
+  align-items: baseline;
+}
+
+.lighter {
+  font-weight: 400;
+  font-size: 32rpx;
+}
+.mini {
+  font-size: 24rpx;
+  color: #5d5d5d;
+  font-weight: 400;
+}
+.del .pprice {
+  font-size: 32rpx;
+  color: #9b9b9b;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+.delthrough {
+  position: relative;
+}
+.delthrough .line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  margin: 0;
+  background-color: currentColor;
+}
+
+.symbol {
+  display: inline;
+  color: inherit;
+  font-size: inherit;
+  font-size: 0.8em;
+}
+.pprice {
+  display: inline;
+  margin: 0 0 0 4rpx;
+}
+.integer {
+  color: inherit;
+  font-size: inherit;
+}
+.decimal {
+  color: inherit;
+  font-size: inherit;
+}
+.decimal.smaller {
+  font-size: 0.8em;
+  vertical-align: baseline;
+}
+
+.currency {
+  color: #fa4126;
+  font-size: 24rpx;
+  margin-left: 2rpx;
+  font-weight: normal;
+}
+
+/* 添加原价的删除线样式 */
+.origin-price {
+  text-decoration: line-through !important;
+  color: #999999 !important;
+  margin-left: 8rpx;  /* 添加一些间距 */
+}
+
+.origin-price .currency {
+  color: #999999 !important;
+  text-decoration: line-through !important;
+}
+
+/* 确保其他样式不会覆盖删除线 */
+.price .pprice[class*="delthrough"] {
+  text-decoration: line-through !important;
+  color: #999999 !important;
+}

@@ -1,0 +1,25 @@
+<view class="home-container">
+  <image class="poster-image" src="{{posterUrl}}" mode="aspectFill"/>
+  <view class="nutrition-entry" bindtap="goToNutrition">
+    <text>山苏营养成分表及营养价值</text>
+    <view class="arrow"></view>
+  </view>
+    <view class="nutrition-entry" bindtap="goToCooking">
+    <text>山苏美食及烹饪方法（炒、煮、涼拌）</text>
+    <view class="arrow"></view>
+  </view>
+  <view class="nutrition-entry" bindtap="goToFujia">
+    <text>山苏附加价值及衍生产品</text>
+    <view class="arrow"></view>
+  </view>
+  
+  <view class="files-section">
+    <view class="section-title">相关文件</view>
+    <view class="file-list">
+      <view class="file-item" wx:for="{{files}}" wx:key="fileID" bindtap="downloadFile" data-index="{{index}}">
+        <text class="file-name">{{item.name}}</text>
+        <image class="download-icon" src="/public/download.png" mode="aspectFit"/>
+      </view>
+    </view>
+  </view>
+</view>

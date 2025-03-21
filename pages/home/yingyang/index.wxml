@@ -1,0 +1,47 @@
+<view class="nutrition-container">
+  <view class="table-container">
+    <view class="table">
+      <view class="tr header">
+        <view class="th">营养成分</view>
+        <view class="th">山苏菜含量</view>
+        <view class="th">普通蔬菜均值</view>
+        <view class="th">山苏优势倍数/百分比</view>
+        <view class="th">核心健康益处</view>
+      </view>
+      <view class="tr" wx:for="{{nutritionData}}" wx:key="index">
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.content}}</view>
+        <view class="td">{{item.average}}</view>
+        <view class="td">{{item.advantage}}</view>
+        <view class="td">{{item.benefit}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="highlights">
+    <view class="highlight-item">
+      <view class="highlight-title">多维度营养</view>
+      <view class="highlight-desc">完美融合蛋白质、脂肪、维生素C、铜、钾五大营养元素</view>
+    </view>
+    <view class="highlight-item">
+      <view class="highlight-title">蛋白质之王</view>
+      <view class="highlight-desc">粗蛋白含量碾压常见绿叶菜，素食者优质蛋白来源。</view>
+    </view>
+    <view class="highlight-item">
+      <view class="highlight-title">心血管卫士</view>
+      <view class="highlight-desc">粗脂肪含量超群，富含护心不饱和脂肪酸。</view>
+    </view>
+    <view class="highlight-item">
+      <view class="highlight-title">维C炸弹</view>
+      <view class="highlight-desc">含量是普通蔬菜2.5倍以上，天然抗氧化剂。</view>
+    </view>
+    <view class="highlight-item">
+      <view class="highlight-title">高钾低钠</view>
+      <view class="highlight-desc">降压黄金组合，高血压人群理想食材。</view>
+    </view>
+    <view class="highlight-item">
+      <view class="highlight-title">铜元素霸主</view>
+      <view class="highlight-desc">含量高达普通蔬菜191倍，助力造血功能。</view>
+    </view>
+  </view>
+</view> 

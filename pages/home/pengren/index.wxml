@@ -1,0 +1,23 @@
+<view class="page-container">
+  <t-tabs value="{{tabValue}}" bind:change="onTabChange">
+    <t-tab-panel wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" label="{{item.label}}">
+      <view class="cooking-container">
+        <view class="recipe-item" 
+              wx:for="{{filteredRecipes[item.value]}}" 
+              wx:key="id" 
+              wx:for-item="recipe">
+          <view class="recipe-header" bindtap="toggleExpand" data-index="{{index}}">
+            <image class="recipe-image" src="{{recipe.image}}" mode="aspectFill"></image>
+            <view class="recipe-info">
+              <view class="recipe-name">{{recipe.name}}</view>
+              <view class="recipe-arrow {{recipe.isExpanded ? 'expanded' : ''}}"></view>
+            </view>
+          </view>
+          <view class="recipe-content {{recipe.isExpanded ? 'expanded' : ''}}">
+            <text>{{recipe.method}}</text>
+          </view>
+        </view>
+      </view>
+    </t-tab-panel>
+  </t-tabs>
+</view> 
