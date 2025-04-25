@@ -1,10 +1,10 @@
 <pano panolist="{{panolist}}" entryid="{{entrypanoid}}" entryname="{{entrypanoname}}" width="320" height="240" key="{{key}}" autoinit="{{false}}" bindtap="closeMenu">
-  <cover-view class="loading-container" wx:if="{{isLoading}}">
-    <cover-view class="loading-content">
-      <cover-view class="loading-spinner"></cover-view>
-      <cover-view class="loading-text">全景加载中...</cover-view>
-    </cover-view>
-  </cover-view>
+  <view class="loading-container" wx:if="{{isLoading}}">
+    <view class="loading-content">
+      <t-loading theme="circular" size="80rpx" class="custom-loading-color" />
+      <view class="loading-text">全景加载中...</view>
+    </view>
+  </view>
   
   <cover-view class="menu-container {{isMenuOpen ? 'menu-open' : ''}}" catchtap="preventBubble">
     <cover-view class="menu-icon {{isMenuOpen ? 'rotate' : ''}}" bindtap="toggleMenu">
@@ -12,7 +12,7 @@
     </cover-view>
     
     <cover-view class="menu-items {{isMenuOpen ? 'show' : ''}}">
-      <cover-view class="menu-item" bindtap="covertap">切换场景</cover-view>
+      <cover-view class="menu-item {{isLoading ? 'disabled' : ''}}" bindtap="{{isLoading ? '' : 'covertap'}}">切换场景</cover-view>
       <cover-view class="menu-item" bindtap="getPanoInfo">场景介绍</cover-view>
     </cover-view>
   </cover-view>

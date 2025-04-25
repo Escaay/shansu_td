@@ -7,6 +7,15 @@ Page({
     // 先定义新闻数据
     const newsData = [
       {
+        id: 0,
+        title: '惊喜！高端特色农业项目落户饶平上饶镇——饶平县上饶镇山苏种植基地举行开种仪式',
+        cloudPath: 'cloud://cloud1-0gys80m48da147a1.636c-cloud1-0gys80m48da147a1-1304271127/image/news1.jpg',
+        pdfUrl:
+          'cloud://cloud1-0gys80m48da147a1.636c-cloud1-0gys80m48da147a1-1304271127/others/惊喜！高端特色农业项目落户饶平上饶镇——饶平县上饶镇山苏种植基地举行开种仪式.pdf',
+        date: '2025-02-27',
+        views: 5149
+      },
+      {
         id: 1,
         title: '上饶镇驻镇帮镇扶村工作队工作简报（2025年第7期）',
         cloudPath: 'cloud://cloud1-0gys80m48da147a1.636c-cloud1-0gys80m48da147a1-1304271127/image/news1.jpg',

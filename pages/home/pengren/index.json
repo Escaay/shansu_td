@@ -2,6 +2,7 @@
   "navigationBarTitleText": "山苏美食及烹饪方法",
   "usingComponents": {
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
-    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "t-loading": "tdesign-miniprogram/loading/loading"
   }
 }

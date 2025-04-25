@@ -13,11 +13,19 @@
             data-type="tea"
             data-index="{{index}}"
           >
-            <image 
-              src="{{item}}"
-              mode="aspectFill"
-              class="product-image"
-            />
+            <view class="image-wrapper">
+              <image 
+                src="{{item.url}}"
+                mode="aspectFill"
+                class="product-image"
+                lazy-load="{{true}}"
+                bindload="onImageLoad"
+                data-type="tea"
+                data-index="{{index}}"
+                hidden="{{!item.loaded}}"
+              />
+              <t-loading theme="circular" size="48rpx" class="image-loading" wx:if="{{!item.loaded}}" t-class-indicator="custom-loading-color"/>
+            </view>
           </view>
         </view>
         <view class="details-container {{products.tea.isExpanded ? 'expanded' : ''}}">
@@ -48,11 +56,19 @@
             data-type="bonsai"
             data-index="{{index}}"
           >
-            <image 
-              src="{{item}}"
-              mode="aspectFill"
-              class="product-image"
-            />
+            <view class="image-wrapper">
+              <image 
+                src="{{item.url}}"
+                mode="aspectFill"
+                class="product-image"
+                lazy-load="{{true}}"
+                bindload="onImageLoad"
+                data-type="bonsai"
+                data-index="{{index}}"
+                hidden="{{!item.loaded}}"
+              />
+              <t-loading theme="circular" size="48rpx" class="image-loading" wx:if="{{!item.loaded}}" t-class-indicator="custom-loading-color"/>
+            </view>
           </view>
         </view>
         <view class="details-container {{products.bonsai.isExpanded ? 'expanded' : ''}}">

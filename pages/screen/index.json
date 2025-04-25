@@ -1,9 +1,10 @@
 {
-  "navigationBarTitleText": "山苏全景",
+  "navigationBarTitleText": "全景VR",
   "usingComponents": {
     "pano": "plugin://wxPano/pano",
     "t-popup": "tdesign-miniprogram/popup/popup",
     "t-icon": "tdesign-miniprogram/icon/icon",
-    "t-button": "tdesign-miniprogram/button/button"
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-loading": "tdesign-miniprogram/loading/loading"
   }
 }

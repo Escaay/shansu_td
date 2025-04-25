@@ -1,7 +1,17 @@
 <view class="screen-container">
   <view class="location-list">
     <view class="location-item" wx:for="{{locationList}}" wx:key="id" data-id="{{item.id}}" bindtap="onLocationTap">
-      <image class="location-image" src="{{item.image}}" mode="aspectFill"/>
+      <view class="image-wrapper">
+        <image 
+          class="location-image" 
+          src="{{item.image}}" 
+          mode="aspectFill"
+          bindload="onImageLoad"
+          data-index="{{index}}"
+          hidden="{{!item.imageLoaded}}"
+        />
+        <t-loading theme="circular" size="64rpx" class="image-loading" wx:if="{{!item.imageLoaded}}" t-class-indicator="custom-loading-color"/>
+      </view>
       <view class="location-info">
         <view class="location-title">{{item.title}}</view>
         <view class="location-desc">{{item.description}}</view>
@@ -28,7 +38,7 @@
         class="contact-item"
       >
         <view class="contact-main">
-          <image class="contact-avatar large" src="{{item.avatar || '/images/default-avatar.png'}}" mode="aspectFill"/>
+          <image class="contact-avatar large" src="{{item.avatar || ''}}" mode="aspectFill"/>
           <view class="contact-info">
             <view class="contact-name">{{item.name}}</view>
             <view class="contact-title">{{item.title}}</view>

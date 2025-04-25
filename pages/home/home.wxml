@@ -1,5 +1,14 @@
 <view class="home-container">
-  <image class="poster-image" src="{{posterUrl}}" mode="aspectFill"/>
+  <view class="poster-wrapper">
+    <image 
+      class="poster-image" 
+      src="{{posterUrl}}" 
+      mode="aspectFill"
+      bindload="onPosterLoad"
+      hidden="{{!posterLoaded}}"
+    />
+    <t-loading theme="circular" size="80rpx" class="poster-loading" wx:if="{{!posterLoaded}}" t-class-indicator="custom-loading-color"/>
+  </view>
   <view class="nutrition-entry" bindtap="goToNutrition">
     <text>山苏营养成分表及营养价值</text>
     <view class="arrow"></view>

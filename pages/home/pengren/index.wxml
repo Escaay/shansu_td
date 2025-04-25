@@ -7,7 +7,16 @@
               wx:key="id" 
               wx:for-item="recipe">
           <view class="recipe-header" bindtap="toggleExpand" data-index="{{index}}">
-            <image class="recipe-image" src="{{recipe.image}}" mode="aspectFill"></image>
+            <view class="recipe-image-container">
+              <image class="recipe-image" 
+                     src="{{recipe.image}}" 
+                     mode="aspectFill"
+                     lazy-load="{{true}}"
+                     bindload="onImageLoad"
+                     data-index="{{index}}"
+                     hidden="{{!recipe.imageLoaded}}"></image>
+              <t-loading theme="circular" size="48rpx" class="image-loading" wx:if="{{!recipe.imageLoaded}}" t-class-indicator="custom-loading-color"/>
+            </view>
             <view class="recipe-info">
               <view class="recipe-name">{{recipe.name}}</view>
               <view class="recipe-arrow {{recipe.isExpanded ? 'expanded' : ''}}"></view>
